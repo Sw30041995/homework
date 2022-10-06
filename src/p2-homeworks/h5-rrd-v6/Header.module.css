@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+}
+
+.menu {
+    font-size: 30px;
+}
+
+.link {
+    display: flex;
+    font-size: 30px;
+}
+
+.item {
+    margin-left: 10px;
+}
+
+.item a {
+    text-decoration: none;
+    color: black;
+}

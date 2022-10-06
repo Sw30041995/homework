@@ -1,0 +1,15 @@
+.errorBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    width: 700px;
+    height: 700px;
+}
+
+.error {
+    font-size: 150px;
+    font-weight: bold;
+}
