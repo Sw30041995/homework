@@ -18,7 +18,7 @@ function Header() {
             <div className={s.link}>
                 <div onClick={removeFocus} className={s.item}><NavLink to={PATH.PRE_JUNIOR}>PreJunior</NavLink></div>
                 <div onClick={removeFocus} className={s.item}><NavLink to={PATH.JUNIOR}>Junior</NavLink></div>
-                <div onClick={removeFocus} className={s.item}><NavLink to={''}>Junior+</NavLink></div>
+                <div onClick={removeFocus} className={s.item}><NavLink to={PATH.ERROR}>Junior+</NavLink></div>
             </div>}
         </div>
     )

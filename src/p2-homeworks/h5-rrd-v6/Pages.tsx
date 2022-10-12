@@ -8,7 +8,8 @@ import JuniorPlus from "../h5/pages/JuniorPlus";
 export const PATH = {
     PRE_JUNIOR: '/pre-junior',
     JUNIOR: '/junior',
-    JUNIOR_PLUS: '/junior-plus'
+    JUNIOR_PLUS: '/junior-plus',
+    ERROR: '/error'
 }
 
 function Pages() {
@@ -22,10 +23,10 @@ function Pages() {
 
                 <Route path={PATH.JUNIOR} element={<Junior/>}/>
 
-                <Route path={PATH.JUNIOR} element={<JuniorPlus/>}/>
+                <Route path={PATH.JUNIOR_PLUS} element={<JuniorPlus/>}/>
 
                 {/*он отрисуется если пользователь захочет попасть на несуществующую страницу*/}
-                <Route path={'/*'} element={<Error404/>}/>
+                <Route path={PATH.ERROR} element={<Error404/>}/>
 
             </Routes>
         </div>
