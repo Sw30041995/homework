@@ -1,5 +1,5 @@
 import React from 'react'
-import {homeWorkReducer} from '../homeWorkReducer'
+import {homeWorkReducer, removeMinorsAC, sortDownAC, sortUpAC} from '../homeWorkReducer'
 import {UserType} from "../../HW8";
 
 let initialState: UserType[] // need to fix any
@@ -16,18 +16,29 @@ beforeEach(() => {
 })
 
 test('sort name up', () => {
-    const newState = homeWorkReducer(initialState, {type: 'sort', payload: 'up'})
+    const newState = homeWorkReducer(initialState, sortUpAC())
 
-    console.log(newState)
-    // expect(...).toBe(...)
+    expect(newState[0].name).toBe('Александр')
+    expect(newState[1].name).toBe('Виктор')
+    expect(newState[2].name).toBe('Дмитрий')
+    expect(newState[3].name).toBe('Ирина')
+    expect(newState[4].name).toBe('Коля')
+    expect(newState[5].name).toBe('Кот')
+
 })
 test('sort name down', () => {
-    const newState = homeWorkReducer(initialState, {type: 'sort', payload: 'down'})
+    const newState = homeWorkReducer(initialState, sortDownAC())
 
+    expect(newState[5].name).toBe('Александр')
+    expect(newState[4].name).toBe('Виктор')
+    expect(newState[3].name).toBe('Дмитрий')
+    expect(newState[2].name).toBe('Ирина')
+    expect(newState[1].name).toBe('Коля')
+    expect(newState[0].name).toBe('Кот')
 
 })
 test('check age 18', () => {
-    const newState = homeWorkReducer(initialState, {type: 'check', payload: 18})
+    const newState = homeWorkReducer(initialState, removeMinorsAC())
 
-
+    expect(newState.length).toBe(4)
 })
